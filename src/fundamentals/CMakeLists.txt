@@ -23,5 +23,5 @@ target_link_libraries(actionInitialization eventAction primaryGeneratorAction nR
 
 add_library(actionInitialization_angcorr ActionInitialization.cc NutrMessenger.cc)
 target_include_directories(actionInitialization_angcorr PUBLIC ${PROJECT_SOURCE_DIR}/include/primary_generator/angcorr ${PROJECT_SOURCE_DIR}/include/sensitive_detector/${SENSITIVE_DETECTOR_DIR})
-target_link_libraries(actionInitialization_angcorr PUBLIC eventAction primaryGeneratorActionAngCorr nRunAction)
-target_link_libraries(actionInitialization_angcorr PRIVATE cascadeRejectionSampler ${Geant4_LIBRARIES})
+target_link_libraries(actionInitialization_angcorr PUBLIC eventAction primaryGeneratorActionAngCorr nRunAction ${Geant4_LIBRARIES})
+target_link_libraries(actionInitialization_angcorr PRIVATE cascadeRejectionSampler)

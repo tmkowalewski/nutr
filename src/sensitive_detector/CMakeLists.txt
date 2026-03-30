@@ -35,20 +35,24 @@ configure_file(
 
 add_library(analysisManager AnalysisManager.cc)
 target_include_directories(analysisManager PUBLIC ${Geant4_INCLUDE_DIRS})
+target_link_libraries(analysisManager PUBLIC ${Geant4_LIBRARIES})
 if(TRACK_PRIMARY)
   target_link_libraries(analysisManager Geant4::G4particles)
 endif()
 
 add_library(nDetectorHit NDetectorHit.cc)
 target_include_directories(nDetectorHit PUBLIC ${Geant4_INCLUDE_DIRS})
+target_link_libraries(nDetectorHit PUBLIC ${Geant4_LIBRARIES})
 
 add_library(nRunAction NRunAction.cc)
 target_include_directories(nRunAction PUBLIC ${Geant4_INCLUDE_DIRS})
+target_link_libraries(nRunAction PUBLIC ${Geant4_LIBRARIES})
 
 add_library(nEventAction NEventAction.cc)
 target_link_libraries(nEventAction nRunAction)
 
 add_library(nSensitiveDetector NSensitiveDetector.cc)
 target_include_directories(nSensitiveDetector PUBLIC ${Geant4_INCLUDE_DIRS})
+target_link_libraries(nSensitiveDetector PUBLIC ${Geant4_LIBRARIES})
 
 add_subdirectory(${SENSITIVE_DETECTOR_DIR})
