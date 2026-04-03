@@ -27,6 +27,8 @@ using std::string;
 #include "G4SystemOfUnits.hh"
 #include "G4VPhysicalVolume.hh"
 
+constexpr double inch = 25.4 * mm;
+
 /**
  * \brief Collimator room upstream of the UTR.
  *
@@ -37,11 +39,11 @@ using std::string;
 class CollimatorRoom {
 public:
   CollimatorRoom(G4LogicalVolume *world_log,
-                 const double col_rad = 0.5 * 0.75 * 25.4 * mm,
+                 const double col_rad = 0.5 * 0.75 * inch,
                  const double col_len = 300. * mm,
                  const string col_mat = "G4_Pb")
       : world_logical(world_log), collimator_radius(col_rad),
-        collimator_length(col_len), collimator_material(col_mat){};
+        collimator_length(col_len), collimator_material(col_mat) {};
   void Construct(const G4ThreeVector global_coordinates);
 
 protected:
