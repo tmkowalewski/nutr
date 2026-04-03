@@ -206,7 +206,7 @@ inline constexpr HPGe_Coaxial_Properties HPGe_120_TUNL_40383{
 
 namespace HPGe_Clover_Collection {
 
-inline constexpr HPGe_Clover_Properties HPGe_Clover_Yale{
+inline constexpr HPGe_Clover_Properties HPGe_Clover_CloverShare{
     .crystal_radius = 0.5 * 50. * mm,
     .crystal_length = 80. * mm,
     .crystal_face_radius = 2. * mm,

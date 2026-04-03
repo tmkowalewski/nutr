@@ -55,33 +55,33 @@ vector<Detector *> detectors = {
         {{{"G4_Cu", 2. * cu_labr_thick}, {"G4_Pb", 2. * pb_labr_thick}}, true}),
 
     new HPGe_Clover(
-        "clover_B1", HPGe_Clover_Collection::HPGe_Clover_Yale, 135. * deg,
-        0. * deg, 8.00 * inch,
+        "clover_B1", HPGe_Clover_Collection::HPGe_Clover_CloverShare,
+        135. * deg, 0. * deg, 8.00 * inch,
         {{{"G4_Cu", cu_clover_thick}, {"G4_Pb", 2. * pb_clover_thin}}, true},
         {}, 0.5 * pi),
     new HPGe_Clover(
-        "clover_B2", HPGe_Clover_Collection::HPGe_Clover_Yale, 125.26 * deg,
-        45. * deg, 8.00 * inch,
+        "clover_B2", HPGe_Clover_Collection::HPGe_Clover_CloverShare,
+        125.26 * deg, 45. * deg, 8.00 * inch,
         {{{"G4_Cu", cu_clover_thick}, {"G4_Pb", pb_clover_thick}}, true}, {},
         0.),
     new HPGe_Clover(
-        "clover_B4", HPGe_Clover_Collection::HPGe_Clover_Yale, 125.26 * deg,
-        135. * deg, 8.00 * inch,
+        "clover_B4", HPGe_Clover_Collection::HPGe_Clover_CloverShare,
+        125.26 * deg, 135. * deg, 8.00 * inch,
         {{{"G4_Cu", cu_clover_thick}, {"G4_Pb", pb_clover_thick}}, true}, {},
         0.),
     new HPGe_Clover(
-        "clover_B5", HPGe_Clover_Collection::HPGe_Clover_Yale, 135. * deg,
-        180. * deg, 8.00 * inch,
+        "clover_B5", HPGe_Clover_Collection::HPGe_Clover_CloverShare,
+        135. * deg, 180. * deg, 8.00 * inch,
         {{{"G4_Cu", cu_clover_thick}, {"G4_Pb", pb_clover_thick}}, true}, {},
         -0.5 * pi),
     new HPGe_Clover(
-        "clover_B6", HPGe_Clover_Collection::HPGe_Clover_Yale, 125.26 * deg,
-        225. * deg, 8.00 * inch,
+        "clover_B6", HPGe_Clover_Collection::HPGe_Clover_CloverShare,
+        125.26 * deg, 225. * deg, 8.00 * inch,
         {{{"G4_Cu", cu_clover_thick}, {"G4_Pb", 2. * pb_clover_thin}}, true},
         {}, 0.5 * pi),
     new HPGe_Clover(
-        "clover_B8", HPGe_Clover_Collection::HPGe_Clover_Yale, 125.26 * deg,
-        315. * deg, 8.00 * inch,
+        "clover_B8", HPGe_Clover_Collection::HPGe_Clover_CloverShare,
+        125.26 * deg, 315. * deg, 8.00 * inch,
         {{{"G4_Cu", cu_clover_thick}, {"G4_Pb", pb_clover_thick}}, true}, {},
         1.0 * pi),
 

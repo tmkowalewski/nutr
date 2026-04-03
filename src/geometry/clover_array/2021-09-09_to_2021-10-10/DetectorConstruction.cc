@@ -50,26 +50,26 @@ constexpr double pb_thinner = 0.038 * inch;
 constexpr double pb_thick = 0.10 * inch;
 
 vector<Detector *> detectors = {
-    new HPGe_Clover("clover_3", HPGe_Clover_Collection::HPGe_Clover_Yale,
+    new HPGe_Clover("clover_3", HPGe_Clover_Collection::HPGe_Clover_CloverShare,
                     90. * deg, 90. * deg, 6.68 * inch,
                     {{{"G4_Cu", cu_thin}, {"G4_Pb", pb_thin}}, true}, {},
                     1.5 * pi),
-    new HPGe_Clover("clover_5", HPGe_Clover_Collection::HPGe_Clover_Yale,
+    new HPGe_Clover("clover_5", HPGe_Clover_Collection::HPGe_Clover_CloverShare,
                     90. * deg, 180. * deg, 5.88 * inch,
                     {{{"G4_Cu", cu_thin}, {"G4_Pb", pb_thin}}, true}, {},
                     0.5 * pi),
-    new HPGe_Clover("clover_8", HPGe_Clover_Collection::HPGe_Clover_Yale,
+    new HPGe_Clover("clover_8", HPGe_Clover_Collection::HPGe_Clover_CloverShare,
                     90. * deg, 315. * deg, 6.38 * inch,
                     {{{"G4_Cu", cu_thin}, {"G4_Pb", pb_thin}}, true}, {}, 0.),
 
-    new HPGe_Clover("clover_B1", HPGe_Clover_Collection::HPGe_Clover_Yale,
-                    135. * deg, 0. * deg, 7.75 * inch,
-                    {{{"G4_Cu", cu_thin}, {"G4_Pb", pb_thin}}, true}, {},
-                    0.5 * pi),
-    new HPGe_Clover("clover_B2", HPGe_Clover_Collection::HPGe_Clover_Yale,
-                    125.26 * deg, 45. * deg, 7.75 * inch,
-                    {{{"G4_Cu", cu_thin}, {"G4_Pb", pb_thin}}, true}, {},
-                    0.5 * pi),
+    new HPGe_Clover(
+        "clover_B1", HPGe_Clover_Collection::HPGe_Clover_CloverShare,
+        135. * deg, 0. * deg, 7.75 * inch,
+        {{{"G4_Cu", cu_thin}, {"G4_Pb", pb_thin}}, true}, {}, 0.5 * pi),
+    new HPGe_Clover(
+        "clover_B2", HPGe_Clover_Collection::HPGe_Clover_CloverShare,
+        125.26 * deg, 45. * deg, 7.75 * inch,
+        {{{"G4_Cu", cu_thin}, {"G4_Pb", pb_thin}}, true}, {}, 0.5 * pi),
     new HPGe_Coaxial(
         "coaxial_B4", detector_construction_config.Coaxial_B4,
         detector_construction_config.Coaxial_B4_Dewar, 125.26 * deg, 135. * deg,
@@ -86,10 +86,10 @@ vector<Detector *> detectors = {
               },
               pb_thinner}},
         }),
-    new HPGe_Clover("clover_B5", HPGe_Clover_Collection::HPGe_Clover_Yale,
-                    135. * deg, 180. * deg, 8.00 * inch,
-                    {{{"G4_Cu", cu_thin}, {"G4_Pb", pb_thin}}, true}, {},
-                    1.5 * pi),
+    new HPGe_Clover(
+        "clover_B5", HPGe_Clover_Collection::HPGe_Clover_CloverShare,
+        135. * deg, 180. * deg, 8.00 * inch,
+        {{{"G4_Cu", cu_thin}, {"G4_Pb", pb_thin}}, true}, {}, 1.5 * pi),
 
     new CeBr3_2x2("cebr_B", 90. * deg, 27.5 * deg, 8.0 * inch,
                   {{{"G4_Cu", cu_thin}}, true}),
