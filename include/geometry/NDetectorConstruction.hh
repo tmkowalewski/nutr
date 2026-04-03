@@ -52,6 +52,7 @@ public:
   size_t GetNumberOfSensitiveDetectors() const {
     return sensitive_logical_volumes.size();
   };
+  vector<string> GetSensitiveDetectorNames() const;
   vector<shared_ptr<SourceVolume>> GetSourceVolumes() { return source_volumes; }
 
   void set_molly_x(const double x) { molly_x = x; }

@@ -76,3 +76,11 @@ void NDetectorConstruction::ConstructSDandField() {
                          true);
   }
 }
+
+vector<string> NDetectorConstruction::GetSensitiveDetectorNames() const {
+  vector<string> names;
+  for (const auto log_vol : sensitive_logical_volumes) {
+    names.push_back(log_vol->GetName());
+  }
+  return names;
+}

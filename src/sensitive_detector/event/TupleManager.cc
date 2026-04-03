@@ -33,13 +33,15 @@ void TupleManager::CreateNtupleColumns(G4AnalysisManager *analysisManager) {
 
   AnalysisManager::CreateNtupleColumns(analysisManager);
 
-  n_sensitive_detectors =
+  NDetectorConstruction *det_const =
       ((NDetectorConstruction *)G4RunManager::GetRunManager()
-           ->GetUserDetectorConstruction())
-          ->GetNumberOfSensitiveDetectors();
+           ->GetUserDetectorConstruction());
+  n_sensitive_detectors = det_const->GetNumberOfSensitiveDetectors();
+
+  vector<string> detector_names = det_const->GetSensitiveDetectorNames();
 
   for (size_t i = 0; i < n_sensitive_detectors; ++i) {
-    analysisManager->CreateNtupleDColumn("det" + to_string(i));
+    analysisManager->CreateNtupleDColumn(detector_names[i]);
   }
 }
 
