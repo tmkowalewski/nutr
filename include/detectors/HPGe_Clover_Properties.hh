@@ -41,63 +41,106 @@ struct HPGe_Clover_Properties {
   // 'Back' = away from the target
 
   // Detector crystals
-  double crystal_radius; // Radius of the detector crystals if they were still
-                         // round
-  double crystal_length; // Length of the detector crystal
-  double crystal_face_radius; // Rounding radius of the crystal face
+  // These crystals are cylinders that have been squared off (See EURYSIS CLOVER
+  // 4x50x80 SEG.2 Drawing sheet). There is also a hole in the crystal for the
+  // anode
+
+  // Radius of the detector crystals if they were still round
+  double crystal_radius;
+
+  // Length of the detector crystal
+  double crystal_length;
+
+  // Rounding radius of the crystal face
+  double crystal_face_radius;
+
   // The contact layers on the surface of the crystal are neglected at the
   // moment, since they usually have a thickness of less than a millimeter and
   // are made of very light materials
-  double crystal_gap; // The four crystals do not touch each other, but there
-                      // is some gap in between
-  double end_cap_to_crystal_gap_front; // Vacuum-filled gap between the end
-                                       // cap and the detector
-                                       // crystals at the front
-  double vacuum_length; // Length of the evacuated area inside the end cap
-  double
-      anode_length; // Length of the anode hole from the back of each crystal.
-  double anode_radius; // Radius of the anode hole.
+
+  // The four crystals do not touch each other, but there
+  // is some gap in between
+  double crystal_gap;
+
+  // Vacuum-filled gap between the end cap and the detector crystals at the
+  // front
+  double end_cap_to_crystal_gap_front;
+
+  // Length of the evacuated area inside the end cap
+  double vacuum_length;
+
+  // Length of the anode hole from the back of each crystal.
+  double anode_length;
+
+  // Radius of the anode hole.
+  double anode_radius;
 
   // End cap
   // Case with quadratic base area and smoothed edges which covers the whole
-  // mount cup. It consists of the fron part that contains the detector crystals
-  // and a back part that contains the electronics. The back part is modelled as
-  // an skeleton, since the inner composition is unknown.
-  double end_cap_front_side_length; // Side length of the front end cap with a
-                                    // quadratic (see next variable) base area
-  double end_cap_front_rounding_radius; // Rounding radius of the edges
-  double end_cap_front_length;     // Length of the end cap around the crystal.
-  double end_cap_front_thickness;  // Thickness of the end cap at the front
-                                   // (But not at the part that faces the
-                                   // target. This 'window thickness' (see
-                                   // below) may be thinner.)
-  double end_cap_window_thickness; // Thickness of the window which faces the
-                                   // target
+  // mount cup. It consists of the front part that contains the detector
+  // crystals and a back part that contains the electronics. The back part is
+  // modelled as an skeleton, since the inner composition is unknown.
 
-  /* The following parts are implemented mainly for aesthetic reasons and
-   * they are rough estimates for the actual structure of the end cap at
-   * the back, the dewar and the connecting piece.
-   */
+  // Side length of the front end cap with a quadratic (see next variable) base
+  // area
+  double end_cap_front_side_length;
 
-  double end_cap_back_side_length; // Side length of the back end cap with a
-                                   // quadratic (see next variable) base area
-  double end_cap_back_rounding_radius; // Rounding radius of the edges
-  double end_cap_back_length; // Length of the end cap around the electronics.
-  double end_cap_back_thickness; // Thickness of the end cap
+  // Rounding radius of the edges
+  double end_cap_front_rounding_radius;
+
+  // Length of the end cap around the crystal.
+  double end_cap_front_length;
+
+  // Thickness of the end cap at the front (But not at the part that faces the
+  // target. This 'window thickness' (see below) may be thinner.)
+  double end_cap_front_thickness;
+
+  // Thickness of the window which faces the target
+  double end_cap_window_thickness;
+
+  // Connection between end cap and dewar
+  // The following parts are implemented mainly for aesthetic reasons and
+  // they are rough estimates for the actual structure of the end cap at
+  // the back, the dewar and the connecting piece.
+
+  // Side length of the back end cap with a
+  // quadratic (see next variable) base area
+  double end_cap_back_side_length;
+
+  // Rounding radius of the edges
+  double end_cap_back_rounding_radius;
+
+  // Length of the end cap around the electronics.
+  double end_cap_back_length;
+
+  // Thickness of the end cap
+  double end_cap_back_thickness;
+
   string_view end_cap_material;
 
   // Connection between dewar and mount cup / end cap
   // Contains the cold finger and electronics, but the latter are not
   // implemented here. Assumed to consist of solid aluminium.
-  double connection_length; // Length of the connecting piece
-  double connection_radius; // Radius of the connecting piece
+
+  // Length of the connecting piece
+  double connection_length;
+
+  // Radius of the connecting piece
+  double connection_radius;
+
   string_view connection_material;
 
   // Dewar
   // A cylindric tube with top and bottom
-  double dewar_length;         // Dewar length, including top and bottom
-  double dewar_outer_radius;   // Outer radius, can be measured most easily
-  double dewar_wall_thickness; // Dewar wall thickness. Assumed to be the same
-                               // for top, bottom and side
+
+  // Dewar length, including top and bottom
+  double dewar_length;
+
+  // Outer radius, can be measured most easily
+  double dewar_outer_radius;
+
+  // Dewar wall thickness. Assumed to be the same for top, bottom and side
+  double dewar_wall_thickness;
+
   string_view dewar_material;
 };
