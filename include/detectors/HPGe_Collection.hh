@@ -236,4 +236,35 @@ inline constexpr HPGe_Clover_Properties HPGe_Clover_Yale{
     .dewar_wall_thickness = 5. * mm,
     .dewar_material = "G4_Al",
 };
-}
+
+inline constexpr HPGe_Clover_Properties HPGe_Clover_4x50x80SEG2{
+    .crystal_radius = 0.5 * 50. * mm,
+    .crystal_length = 80. * mm,
+    .crystal_face_radius = 2. * mm,
+    .crystal_gap = 0.6 * mm,
+    .end_cap_to_crystal_gap_front = (7. - 1.5) * mm,
+    .vacuum_length = 125. * mm,
+    .anode_length = (80. - 8.) * mm, // Estimated (see HPGe_Clover class)
+    .anode_radius = 5. * mm,         // Estimated (see HPGe_Clover class)
+    .end_cap_front_side_length = 101. * mm,
+    .end_cap_front_rounding_radius = 15.5 * mm,
+    .end_cap_front_length = 220. * mm,
+    .end_cap_front_thickness = 1.5 * mm,
+    .end_cap_window_thickness =
+        1.5 * mm, // Eurisys Mesures manual gives no specific value for the
+                  // front window, might be thinner, but assuming the same
+                  // thickness everywhere is the best guess we have
+    .end_cap_back_side_length = 129.5 * mm,
+    .end_cap_back_rounding_radius = 30. * mm,
+    .end_cap_back_length = 210. * mm,
+    .end_cap_back_thickness = 0.5 * 40. * mm,
+    .end_cap_material = "G4_Al",
+    .connection_length = 40. * mm,
+    .connection_radius = 0.5 * 70. * mm, // Estimated
+    .connection_material = "G4_Al",
+    .dewar_length = 318. * mm,
+    .dewar_outer_radius = 0.5 * 222. * mm,
+    .dewar_wall_thickness = 5. * mm,
+    .dewar_material = "G4_Al",
+};
+} // namespace HPGe_Clover_Collection
