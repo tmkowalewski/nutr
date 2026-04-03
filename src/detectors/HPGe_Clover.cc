@@ -165,7 +165,7 @@ void HPGe_Clover::Construct_Detector(G4LogicalVolume *world_logical,
         detector_crystal(to_string(n_crystal + 1), dead_layer[n_crystal]);
     sensitive_logical_volumes.push_back(new G4LogicalVolume(
         crystal_solid[n_crystal], nist->FindOrBuildMaterial("G4_Ge"),
-        detector_name + "_" + to_string(n_crystal + 1)));
+        detector_name + "E" + to_string(n_crystal + 1)));
     sensitive_logical_volumes[n_crystal]->SetVisAttributes(
         new G4VisAttributes(colors[n_crystal]));
     new G4PVPlacement(0, G4ThreeVector(), sensitive_logical_volumes[n_crystal],
