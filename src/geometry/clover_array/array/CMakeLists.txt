@@ -63,6 +63,9 @@ target_include_directories(leadShieldingUTR_2021-11-08_to_2021-11-21 PUBLIC ${Ge
 add_library(leadShieldingUTR_2022-01-21_to_2022-03-07 EXCLUDE_FROM_ALL LeadShieldingUTR_2022-01-21_to_2022-03-07.cc)
 target_include_directories(leadShieldingUTR_2022-01-21_to_2022-03-07 PUBLIC ${Geant4_INCLUDE_DIRS})
 
+add_library(leadShieldingUTR_70Ge_Kowalewski_LE EXCLUDE_FROM_ALL LeadShieldingUTR_70Ge_Kowalewski_LE.cc)
+target_include_directories(leadShieldingUTR_70Ge_Kowalewski_LE PUBLIC ${Geant4_INCLUDE_DIRS})
+
 add_library(mechanical EXCLUDE_FROM_ALL Mechanical.cc)
 target_include_directories(mechanical PUBLIC ${Geant4_INCLUDE_DIRS})
 

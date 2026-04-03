@@ -107,6 +107,9 @@ option(GEOMETRY_2022-02-07_to_2022-02-15
 option(GEOMETRY_2022-02-21_to_2022-03-02
        "Build Clover Array geometry for time interval 2022-02-21 to 2022-03-02."
        ON)
+option(GEOMETRY_70Ge_Kowalewski_LE
+       "Build Clover Array geometry for the 70Ge_Kowalewski (Low Energy) Experiment."
+       ON)
 
 set(PRODUCTION_CUT_LOW_KEV
     "0.99"
@@ -171,6 +174,9 @@ if(${GEOMETRY_2022-02-07_to_2022-02-15})
 endif()
 if(${GEOMETRY_2022-02-21_to_2022-03-02})
   add_subdirectory(src/geometry/clover_array/2022-02-21_to_2022-03-02)
+endif()
+if(${GEOMETRY_70Ge_Kowalewski_LE})
+  add_subdirectory(src/geometry/clover_array/70Ge_Kowalewski_LE)
 endif()
 add_subdirectory(src/physics)
 add_subdirectory(${PROJECT_SOURCE_DIR}/src/primary_generator/gps)
