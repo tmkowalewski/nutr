@@ -188,3 +188,6 @@ foreach(macro ${MACROS_ESSENTIAL})
   configure_file(${PROJECT_SOURCE_DIR}/macros/${macro}
                  ${PROJECT_BINARY_DIR}/${macro} COPYONLY)
 endforeach()
+
+file(COPY ${PROJECT_SOURCE_DIR}/macros
+     DESTINATION ${PROJECT_BINARY_DIR})

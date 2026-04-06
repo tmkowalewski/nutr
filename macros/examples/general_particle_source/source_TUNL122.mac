@@ -1,0 +1,28 @@
+## TUNL 122 (22Na)
+# Activity = 10 uCi (370 kBq) on 1-Jun-17 12:00 PST
+# T_1/2 = 4933 +/- 11 days
+# Kapton (Polyimide) 12.7 mm OD x 0.051 mm thick
+
+/run/numberOfThreads 20
+/run/initialize
+
+## Define particle
+# Decaying radioactive isotope
+/gps/particle ion
+/gps/ion 63 152 0 0
+/gps/energy 0. MeV
+
+
+## Define source dimensions
+# Disk source
+/gps/pos/type Plane
+/gps/pos/shape Circle
+/gps/pos/centre 0. 0. 0. mm
+/gps/pos/radius 2.54 mm
+/gps/ang/type iso
+
+# Number of decays per GEANT4 event
+/gps/number 1
+
+# Run with number of events
+/run/beamOn 100000000

@@ -1,0 +1,29 @@
+## TUNL 61 (60Co)
+# Activity = 5.205 uCi (192.6 kBq) on 1-Apr-14 12:00 PST
+# T_1/2 = 5.272 +/- 0.001 years
+# Acrylic 25.4 mm OD x 6.35 mm thick
+
+/run/numberOfThreads 20
+/run/initialize
+
+## Define particle
+# Decaying radioactive isotope
+/gps/particle ion
+/gps/ion 27 60 0 0
+/gps/energy 0. MeV
+
+
+## Define source dimensions
+# Disk source
+/gps/pos/type Volume
+/gps/pos/shape Cylinder
+/gps/pos/centre 0. 0. 0. mm
+/gps/pos/radius 2.5 mm
+/gps/pos/halfz 1.59 mm
+/gps/ang/type iso
+
+# Number of decays per GEANT4 event
+/gps/number 1
+
+# Run with number of events
+/run/beamOn 100000000
