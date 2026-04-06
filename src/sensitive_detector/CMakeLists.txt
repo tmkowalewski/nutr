@@ -26,7 +26,7 @@ set(UPDATE_FREQUENCY
 )
 
 option(TRACK_PRIMARY
-       "Track position and momentum of (first) primary vertex per event" Off)
+       "Track position and momentum of (first) primary vertex per event" OFF)
 
 configure_file(
   ${PROJECT_SOURCE_DIR}/include/sensitive_detector/SensitiveDetectorBuildOptions.hh.in
@@ -37,7 +37,7 @@ add_library(analysisManager AnalysisManager.cc)
 target_include_directories(analysisManager PUBLIC ${Geant4_INCLUDE_DIRS})
 target_link_libraries(analysisManager PUBLIC ${Geant4_LIBRARIES})
 if(TRACK_PRIMARY)
-  target_link_libraries(analysisManager Geant4::G4particles)
+  target_link_libraries(analysisManager PUBLIC Geant4::G4particles)
 endif()
 
 add_library(nDetectorHit NDetectorHit.cc)
