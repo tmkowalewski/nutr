@@ -25,8 +25,8 @@ if(DEFINED ENV{G4LENDDATA})
       "G4HadronElasticPhysicsLEND"
       CACHE STRING "Use G4HadronElasticPhysicsLEND.")
   set(HADRON_INELASTIC
-      "G4HadronPhysicsShieldingLEND"
-      CACHE STRING "Use G4HadronPhysicsShieldingLEND")
+      "G4HadronPhysicsLEND"
+      CACHE STRING "Use G4HadronPhysicsLEND")
 else()
   message(
     STATUS
