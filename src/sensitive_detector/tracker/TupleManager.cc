@@ -50,9 +50,9 @@ size_t TupleManager::FillNtupleColumns(G4AnalysisManager *analysisManager,
   analysisManager->FillNtupleDColumn(
       0, col++, static_cast<DetectorHit *>(hits[0])->GetGlobalTime());
   analysisManager->FillNtupleDColumn(
-      0, col++, static_cast<DetectorHit *>(hits[0])->GetEdep());
+      0, col++, static_cast<DetectorHit *>(hits[0])->GetEdep() * 1000.);  // Energy deposition (keV)
   analysisManager->FillNtupleDColumn(
-      0, col++, static_cast<DetectorHit *>(hits[0])->GetEkin());
+      0, col++, static_cast<DetectorHit *>(hits[0])->GetEkin() * 1000.);  // Kinetic energy (keV)
   analysisManager->FillNtupleDColumn(
       0, col++, static_cast<DetectorHit *>(hits[0])->GetPos().x());
   analysisManager->FillNtupleDColumn(
