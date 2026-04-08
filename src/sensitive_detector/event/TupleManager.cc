@@ -54,7 +54,8 @@ size_t TupleManager::FillNtupleColumns(G4AnalysisManager *analysisManager,
   auto col = AnalysisManager::FillNtupleColumns(analysisManager, event, hits);
 
   for (size_t i = 0; i < hits.size(); ++i) {
-    double edep = static_cast<DetectorHit *>(hits[i])->GetEdep() * 1000.;  // Energy deposition (keV)
+    double edep = static_cast<DetectorHit *>(hits[i])->GetEdep() *
+                  1000.; // Energy deposition (keV)
     if (edep == 0.) {
       analysisManager->FillNtupleDColumn(
           0, col++, std::numeric_limits<double>::quiet_NaN());

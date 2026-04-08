@@ -39,6 +39,8 @@ size_t TupleManager::FillNtupleColumns(G4AnalysisManager *analysisManager,
   analysisManager->FillNtupleIColumn(
       0, col++, static_cast<DetectorHit *>(hits[0])->GetDetectorID());
   analysisManager->FillNtupleDColumn(
-      0, col++, static_cast<DetectorHit *>(hits[0])->GetEdep() * 1000.);  // Energy deposition (keV)
+      0, col++,
+      static_cast<DetectorHit *>(hits[0])->GetEdep() *
+          1000.); // Energy deposition (keV)
   return col;
 }
