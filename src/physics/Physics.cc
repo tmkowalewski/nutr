@@ -20,6 +20,8 @@
 #include "G4DecayPhysics.hh"
 #include "G4EmExtraPhysics.hh"
 #include "G4EmLivermorePolarizedPhysics.hh"
+#include "G4HadronElasticPhysicsLEND.hh"
+#include "G4HadronPhysicsLEND.hh"
 #include "G4RadioactiveDecayPhysics.hh"
 #include "G4SystemOfUnits.hh"
 
@@ -43,9 +45,14 @@ Physics::Physics() {
   }
 
   if constexpr (physics_build_options.use_hadron_physics) {
-    RegisterPhysics(new HadronElastic());
+    if constexpr (physics_build_options.use_lendgammanuclear) {
+      RegisterPhysics(new G4HadronElasticPhysicsLEND());
 
-    RegisterPhysics(new HadronInelastic());
+      RegisterPhysics(new G4HadronPhysicsLEND());
+    } else {
+      RegisterPhysics(new HadronElastic());
+      RegisterPhysics(new HadronInelastic());
+    }
   }
 }
 

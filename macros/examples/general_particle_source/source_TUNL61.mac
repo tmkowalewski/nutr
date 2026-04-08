@@ -6,6 +6,9 @@
 /run/numberOfThreads 20
 /run/initialize
 
+# Raise half-life limit
+/process/had/rdm/thresholdForVeryLongDecayTime 1.0e+60 year
+
 ## Define particle
 # Decaying radioactive isotope
 /gps/particle ion
@@ -26,4 +29,4 @@
 /gps/number 1
 
 # Run with number of events
-/run/beamOn 100000000
+/run/beamOn 1000000

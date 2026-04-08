@@ -1,5 +1,8 @@
-/run/numberOfThreads
+/run/numberOfThreads 20
 /run/initialize
+
+# Raise half-life limit
+/process/had/rdm/thresholdForVeryLongDecayTime 1.0e+60 year
 
 ## Define particle
 

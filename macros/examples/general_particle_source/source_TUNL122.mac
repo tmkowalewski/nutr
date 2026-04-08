@@ -1,10 +1,13 @@
 ## TUNL 122 (22Na)
 # Activity = 10 uCi (370 kBq) on 1-Jun-17 12:00 PST
-# T_1/2 = 4933 +/- 11 days
+# T_1/2 = 2.6019 +/- 0.0005 years
 # Kapton (Polyimide) 12.7 mm OD x 0.051 mm thick
 
 /run/numberOfThreads 20
 /run/initialize
+
+# Raise half-life limit
+/process/had/rdm/thresholdForVeryLongDecayTime 1.0e+60 year
 
 ## Define particle
 # Decaying radioactive isotope

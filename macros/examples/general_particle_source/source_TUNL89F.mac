@@ -6,6 +6,9 @@
 /run/numberOfThreads 20
 /run/initialize
 
+# Raise half-life limit
+/process/had/rdm/thresholdForVeryLongDecayTime 1.0e+60 year
+
 ## Define particle
 # Decaying radioactive isotope
 /gps/particle ion
@@ -22,8 +25,5 @@
 /gps/pos/halfz 1.59 mm
 /gps/ang/type iso
 
-# Number of decays per GEANT4 event
-/gps/number 1
-
 # Run with number of events
-/run/beamOn 1000000
+/run/beamOn 1
