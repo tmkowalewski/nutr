@@ -22,7 +22,7 @@
 /control/verbose 2
 /run/verbose 2
 
-#/run/numberOfThreads 4
+/run/numberOfThreads 1
 
 /run/initialize
 
