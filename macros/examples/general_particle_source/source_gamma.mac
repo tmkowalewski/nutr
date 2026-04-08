@@ -1,24 +1,15 @@
 /run/numberOfThreads 20
 /run/initialize
 
-# Raise half-life limit
-/process/had/rdm/thresholdForVeryLongDecayTime 1.0e+60 year
-
 ## Define particle
-
 # Monoenergetic source
 /gps/particle gamma
-/gps/energy 1.332 MeV
-# Decaying radioactive isotope
-#/gps/particle ion
-#/gps/ion 27 60 0 0
-#/gps/energy 0. MeV
+/gps/energy 846.77 keV
 
 ## Define source dimensions
-
 # Point source
 /gps/pos/type Point
 /gps/pos/centre 0. 0. 0. mm
 /gps/ang/type iso
 
-/run/beamOn 
+/run/beamOn 10000000
