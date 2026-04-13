@@ -55,7 +55,7 @@ void MOLLY::Construct_Detector(G4LogicalVolume *world_logical,
                  (1. - dead_layer[0]) * crystal_dimension, 0., twopi);
   sensitive_logical_volumes.push_back(new G4LogicalVolume(
       crystal_active_solid, nist->FindOrBuildMaterial("G4_SODIUM_IODIDE"),
-      detector_name + "_crystal_active_logical"));
+      detector_name));
   sensitive_logical_volumes[0]->SetVisAttributes(G4Color::Magenta());
   new G4PVPlacement(0, G4ThreeVector(), sensitive_logical_volumes[0],
                     detector_name + "_crystal_active", crystal_logical, false,

@@ -40,8 +40,8 @@
 class MOLLY : public Detector {
 public:
   MOLLY(const double _theta, const double _phi, const double _dist_from_center)
-      : Detector("molly", _theta, _phi, _dist_from_center, {{}}, {}, 0.,
-                 {0.}){};
+      : Detector("MOLLY", _theta, _phi, _dist_from_center, {{}}, {}, 0., {0.}) {
+        };
 
 protected:
   void Construct_Detector(G4LogicalVolume *world_logical,
@@ -49,7 +49,7 @@ protected:
   void Construct_Filter_Case(
       [[maybe_unused]] G4LogicalVolume *world_logical,
       [[maybe_unused]] G4ThreeVector global_coordinates,
-      [[maybe_unused]] double filter_dist_from_center) override final{};
+      [[maybe_unused]] double filter_dist_from_center) override final {};
   G4VSolid *Filter_Shape(const string name,
                          const Filter &filter) const override final;
 };
