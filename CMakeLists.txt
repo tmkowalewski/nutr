@@ -75,40 +75,37 @@ endif(BUILD_DOCUMENTATION)
 
 option(GEOMETRY_2021-02-16_to_2021-04-10
        "Build Clover Array geometry for time interval 2021-02-16 to 2021-04-10."
-       OFF)
+       ON)
 option(GEOMETRY_2021-04-19_to_2021-04-30
        "Build Clover Array geometry for time interval 2021-04-19 to 2021-04-30."
-       OFF)
+       ON)
 option(GEOMETRY_2021-05-07_to_2021-05-30
        "Build Clover Array geometry for time interval 2021-05-07 to 2021-05-30."
-       OFF)
+       ON)
 option(GEOMETRY_2021-08-23 "Build Clover Array geometry on 2021-08-23." OFF)
 option(GEOMETRY_2021-08-24_to_2021-08-25
        "Build Clover Array geometry for time interval 2021-08-24 to 2021-08-25."
-       OFF)
+       ON)
 option(GEOMETRY_2021-08-25_to_2021-08-27
        "Build Clover Array geometry for time interval 2021-08-25 to 2021-08-27."
-       OFF)
+       ON)
 option(GEOMETRY_2021-08-28_to_2021-09-09
        "Build Clover Array geometry for time interval 2021-08-28 to 2021-09-09."
-       OFF)
+       ON)
 option(GEOMETRY_2021-09-09_to_2021-10-10
        "Build Clover Array geometry for time interval 2021-09-09 to 2021-10-10."
-       OFF)
+       ON)
 option(GEOMETRY_2021-11-08_to_2021-11-21
        "Build Clover Array geometry for time interval 2021-11-08 to 2021-11-21."
-       OFF)
+       ON)
 option(GEOMETRY_2022-01-21_to_2022-02-05
        "Build Clover Array geometry for time interval 2022-01-21 to 2022-02-05."
-       OFF)
+       ON)
 option(GEOMETRY_2022-02-07_to_2022-02-15
        "Build Clover Array geometry for time interval 2022-02-07 to 2022-02-15."
-       OFF)
+       ON)
 option(GEOMETRY_2022-02-21_to_2022-03-02
        "Build Clover Array geometry for time interval 2022-02-21 to 2022-03-02."
-       OFF)
-option(GEOMETRY_70Ge_Kowalewski_LE
-       "Build Clover Array geometry for the 70Ge_Kowalewski (Low Energy) Experiment."
        ON)
 
 set(PRODUCTION_CUT_LOW_KEV
@@ -175,9 +172,7 @@ endif()
 if(${GEOMETRY_2022-02-21_to_2022-03-02})
   add_subdirectory(src/geometry/clover_array/2022-02-21_to_2022-03-02)
 endif()
-if(${GEOMETRY_70Ge_Kowalewski_LE})
-  add_subdirectory(src/geometry/clover_array/70Ge_Kowalewski_LE)
-endif()
+
 add_subdirectory(src/physics)
 add_subdirectory(${PROJECT_SOURCE_DIR}/src/primary_generator/gps)
 add_subdirectory(${PROJECT_SOURCE_DIR}/src/primary_generator/angcorr)
