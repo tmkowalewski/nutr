@@ -73,40 +73,6 @@ if(BUILD_DOCUMENTATION)
   add_custom_target(doc_doxygen ALL COMMAND ${DOXYGEN_EXECUTABLE} Doxyfile)
 endif(BUILD_DOCUMENTATION)
 
-option(GEOMETRY_2021-02-16_to_2021-04-10
-       "Build Clover Array geometry for time interval 2021-02-16 to 2021-04-10."
-       OFF)
-option(GEOMETRY_2021-04-19_to_2021-04-30
-       "Build Clover Array geometry for time interval 2021-04-19 to 2021-04-30."
-       OFF)
-option(GEOMETRY_2021-05-07_to_2021-05-30
-       "Build Clover Array geometry for time interval 2021-05-07 to 2021-05-30."
-       OFF)
-option(GEOMETRY_2021-08-23 "Build Clover Array geometry on 2021-08-23." OFF)
-option(GEOMETRY_2021-08-24_to_2021-08-25
-       "Build Clover Array geometry for time interval 2021-08-24 to 2021-08-25."
-       OFF)
-option(GEOMETRY_2021-08-25_to_2021-08-27
-       "Build Clover Array geometry for time interval 2021-08-25 to 2021-08-27."
-       OFF)
-option(GEOMETRY_2021-08-28_to_2021-09-09
-       "Build Clover Array geometry for time interval 2021-08-28 to 2021-09-09."
-       OFF)
-option(GEOMETRY_2021-09-09_to_2021-10-10
-       "Build Clover Array geometry for time interval 2021-09-09 to 2021-10-10."
-       OFF)
-option(GEOMETRY_2021-11-08_to_2021-11-21
-       "Build Clover Array geometry for time interval 2021-11-08 to 2021-11-21."
-       OFF)
-option(GEOMETRY_2022-01-21_to_2022-02-05
-       "Build Clover Array geometry for time interval 2022-01-21 to 2022-02-05."
-       OFF)
-option(GEOMETRY_2022-02-07_to_2022-02-15
-       "Build Clover Array geometry for time interval 2022-02-07 to 2022-02-15."
-       OFF)
-option(GEOMETRY_2022-02-21_to_2022-03-02
-       "Build Clover Array geometry for time interval 2022-02-21 to 2022-03-02."
-       OFF)
 option(GEOMETRY_70Ge_Kowalewski_LE
        "Build Clover Array geometry for the 70Ge_Kowalewski (Low Energy) Experiment."
        ON)
@@ -139,42 +105,6 @@ add_subdirectory(src/fundamentals)
 add_subdirectory(src/geometry)
 add_subdirectory(src/geometry/materials)
 add_subdirectory(src/geometry/clover_array/array)
-if(${GEOMETRY_2021-02-16_to_2021-04-10})
-  add_subdirectory(src/geometry/clover_array/2021-02-16_to_2021-04-10)
-endif()
-if(${GEOMETRY_2021-04-19_to_2021-04-30})
-  add_subdirectory(src/geometry/clover_array/2021-04-19_to_2021-04-30)
-endif()
-if(${GEOMETRY_2021-05-07_to_2021-05-30})
-  add_subdirectory(src/geometry/clover_array/2021-05-07_to_2021-05-30)
-endif()
-if(${GEOMETRY_2021-08-23})
-  add_subdirectory(src/geometry/clover_array/2021-08-23)
-endif()
-if(${GEOMETRY_2021-08-24_to_2021-08-25})
-  add_subdirectory(src/geometry/clover_array/2021-08-24_to_2021-08-25)
-endif()
-if(${GEOMETRY_2021-08-25_to_2021-08-27})
-  add_subdirectory(src/geometry/clover_array/2021-08-25_to_2021-08-27)
-endif()
-if(${GEOMETRY_2021-08-28_to_2021-09-09})
-  add_subdirectory(src/geometry/clover_array/2021-08-28_to_2021-09-09)
-endif()
-if(${GEOMETRY_2021-09-09_to_2021-10-10})
-  add_subdirectory(src/geometry/clover_array/2021-09-09_to_2021-10-10)
-endif()
-if(${GEOMETRY_2021-11-08_to_2021-11-21})
-  add_subdirectory(src/geometry/clover_array/2021-11-08_to_2021-11-21)
-endif()
-if(${GEOMETRY_2022-01-21_to_2022-02-05})
-  add_subdirectory(src/geometry/clover_array/2022-01-21_to_2022-02-05)
-endif()
-if(${GEOMETRY_2022-02-07_to_2022-02-15})
-  add_subdirectory(src/geometry/clover_array/2022-02-07_to_2022-02-15)
-endif()
-if(${GEOMETRY_2022-02-21_to_2022-03-02})
-  add_subdirectory(src/geometry/clover_array/2022-02-21_to_2022-03-02)
-endif()
 if(${GEOMETRY_70Ge_Kowalewski_LE})
   add_subdirectory(src/geometry/clover_array/70Ge_Kowalewski_LE)
 endif()
