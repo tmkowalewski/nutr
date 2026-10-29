@@ -29,3 +29,6 @@ add_executable(angcorr_70Ge_Kowalewski_LE ${PROJECT_SOURCE_DIR}/src/fundamentals
 set_target_properties(angcorr_70Ge_Kowalewski_LE PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/70Ge_Kowalewski_LE)
 target_include_directories(angcorr_70Ge_Kowalewski_LE PUBLIC ${PROJECT_SOURCE_DIR}/include/fundamentals ${PROJECT_SOURCE_DIR}/include/geometry ${PROJECT_SOURCE_DIR}/include/physics)
 target_link_libraries(angcorr_70Ge_Kowalewski_LE actionInitialization ${Boost_LIBRARIES} detectorConstruction_70Ge_Kowalewski_LE physics ${Geant4_LIBRARIES})
+
+install(TARGETS gps_70Ge_Kowalewski_LE angcorr_70Ge_Kowalewski_LE
+        RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})

@@ -35,6 +35,8 @@
 cmake_minimum_required(VERSION 3.7.2)
 project(nutr VERSION 0.4.1)
 
+include(GNUInstallDirs)
+
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -121,3 +123,19 @@ endforeach()
 
 file(COPY ${PROJECT_SOURCE_DIR}/macros
      DESTINATION ${PROJECT_BINARY_DIR})
+
+file(COPY ${PROJECT_SOURCE_DIR}/scripts
+     DESTINATION ${PROJECT_BINARY_DIR})
+
+# Installation: choose the destination with -DCMAKE_INSTALL_PREFIX=<dir>
+# or `cmake --install <build> --prefix <dir>`.
+install(DIRECTORY ${PROJECT_SOURCE_DIR}/macros
+        DESTINATION ${CMAKE_INSTALL_DATADIR}/nutr)
+install(
+  DIRECTORY ${PROJECT_SOURCE_DIR}/scripts
+  DESTINATION ${CMAKE_INSTALL_DATADIR}/nutr
+  USE_SOURCE_PERMISSIONS)
+if(BUILD_DOCUMENTATION)
+  install(DIRECTORY ${PROJECT_BINARY_DIR}/html
+          DESTINATION ${CMAKE_INSTALL_DOCDIR} OPTIONAL)
+endif()
