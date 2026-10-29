@@ -1,0 +1,15 @@
+/run/numberOfThreads 20
+/run/initialize
+
+## Define particle
+# Monoenergetic source
+/gps/particle gamma
+/gps/energy ENERGY keV
+
+## Define source dimensions
+# Point source
+/gps/pos/type Point
+/gps/pos/centre 0. 0. 0. mm
+/gps/ang/type iso
+
+/run/beamOn 10000000
